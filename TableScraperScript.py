@@ -10,7 +10,7 @@ performer = ""
 work = ""
 table = soup.find("table", {"class" : "views-table cols-4"})
 
-f = open('output.csv', 'w')
+f = open('output.xml', 'w')
 
 for row in table.findAll("tr"):
     cells = row.findAll("td")
@@ -25,8 +25,8 @@ for row in table.findAll("tr"):
 	        performer = link[0].find(text=True)
 	    elif len(link) == 0:
 	        performer = cells[3].find(text=True)
-	result = year + ";" + category + ";" + work + ";" + performer
-	f.write(result)
+	f.write("<dataTable>" + "<year>" + year + "</year>" + "<category>" + category + "</category>" + "<work>" + work + "</work>" + "<performer>" + performer + "</performer>" + "</dataTable>")
+	#f.write(result)
 	#print result
 
 f.close()
