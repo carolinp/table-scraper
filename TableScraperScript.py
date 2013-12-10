@@ -12,7 +12,6 @@ for i in address:
     site = address[x]
     page = urllib2.urlopen(site)
     soup = BeautifulSoup(page)
-    print site
 #Empty variables that the data from each cell will go into later
     year = ""
     category = ""

@@ -42,25 +42,41 @@ for row in table.findAll("tr"):
     if len(cells) == 2:
         cell1 = cells[0].find(text=True)
         cell2 = cells[1].find(text=True)
-        result = cell1 + ";" + cell2 
-        f.write(result)
+	if file_name[-3:] == 'csv':
+            result = cell1 + ";" + cell2
+	    f.write(result)
+	    print "Writing..."
+	if file_name[-3:] == 'xml':
+	    result = "<dataTable>" + "<cell1>" + cell1 + "</cell1>" + "<cell2>" + cell2 + "</cell2>" + "</dataTable>"
+            f.write(result)
+            print "Writing..."
        
     if len(cells) == 3:
         cell1 = cells[0].find(text=True)
         cell2 = cells[1].find(text=True)
         cell3 = cells[2].find(text=True)
-        result = cell1 + ";" + cell2 + ";" + cell3 
-        f.write(result)
-       
+	if file_name[-3:] == 'csv':
+            result = cell1 + ";" + cell2 + ";" + cell3 
+            f.write(result)
+            print "Writing..."
+	if file_name[-3:] == 'xml':
+            result = "<dataTable>" + "<cell1>" + cell1 + "</cell1>" + "<cell2>" + cell2 + "</cell2>" + "<cell3>" + cell3 + "</cell3>" + "</dataTable>" 
+            f.write(result)
+            print "Writing..."
  
     if len(cells) == 4:
         cell1 = cells[0].find(text=True)
         cell2 = cells[1].find(text=True)
         cell3 = cells[2].find(text=True)
 	cell4 = cells[3].find(text=True)
-	result = cell1 + ";" + cell2 + ";" + cell3 + ";" + cell4
-	f.write(result)
-
+	if file_name[-3:] == 'csv':
+	    result = cell1 + ";" + cell2 + ";" + cell3 + ";" + cell4
+	    f.write(result)
+            print "Writing..."
+        if file_name[-3:] == 'xml':
+            result = "<dataTable>" + "<cell1>" + cell1 + "</cell1>" + "<cell2>" + cell2 + "</cell2>" + "<cell3>" + cell3 + "</cell3>" + "<cell4>" + cell4 + "</cell4>" + "</dataTable>"
+            f.write(result)
+            print "Writing..."
 
     if len(cells) == 5:
         cell1 = cells[0].find(text=True)
@@ -68,9 +84,14 @@ for row in table.findAll("tr"):
         cell3 = cells[2].find(text=True)
 	cell4 = cells[3].find(text=True)
 	cell5 = cells[4].find(text=True)
-        result = cell1 + ";" + cell2 + ";" + cell3 + ";" + cell4 + ":" + cell5 
-        f.write(result)
-     
+	if file_name[-3:] == 'csv':
+            result = cell1 + ";" + cell2 + ";" + cell3 + ";" + cell4 + ":" + cell5 
+            f.write(result)
+            print "Writing..."
+        if file_name[-3:] == 'xml':
+            result = "<dataTable>" + "<cell1>" + cell1 + "</cell1>" + "<cell2>" + cell2 + "</cell2>" + "<cell3>" + cell3 + "</cell3>" + "<cell4>" + cell4 + "</cell4>" + "<cell5>" + cell5 + "</cell5>" + "</dataTable>"
+            f.write(result)
+            print "Writing..."
 
     if len(cells) == 6:
         cell1 = cells[0].find(text=True)
@@ -79,8 +100,14 @@ for row in table.findAll("tr"):
         cell4 = cells[3].find(text=True)
         cell5 = cells[4].find(text=True)
 	cell6 = cells[5].find(text=True)
-	result = cell1 + ";" + cell2 + ";" + cell3 + ";" + cell4 + ":" + cell5 + ";" + cell6
-        f.write(result)
+	if file_name[-3:] is 'csv':
+	    result = cell1 + ";" + cell2 + ";" + cell3 + ";" + cell4 + ":" + cell5 + ";" + cell6
+            f.write(result)
+            print "Writing..."
+        if file_name[-3:] == 'xml':
+            result = "<dataTable>" + "<cell1>" + cell1 + "</cell1>" + "<cell2>" + cell2 + "</cell2>" + "<cell3>" + cell3 + "</cell3>" + "<cell4>" + cell4 + "</cell4>" + "<cell5>" + cell5 + "</cell5>" + "<cell6>" + cell6 + "</cell6>" + "</dataTable>"
+            f.write(result)
+            print "Writing..."
         
 
 #Closes the file and prints to let the user know that it's done
