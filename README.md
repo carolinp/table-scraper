@@ -18,7 +18,7 @@ Next, make sure you've got BeautifulSoup downloaded (if not, do `apt-get python-
 
 Then, open up a window with the site you want to scrape and go ahead and inspect all up in the table you want to scrape (right click "Inspect Element"). 
 
-Open a terminal window and enter in `python TableScraperEdit.py` (if you've downloaded the whole folder, make sure you enter `cd table-scraper` first). Now it's going to ask you a bunch of questions -- they're not terribly difficult but it's important to remember to PUT ALL OF YOUR ANSWERS IN QUOTATION MARKS. Otherwise, the program will get confused and cry little error tears all over you and you'll have to run the script again. Now, let's go through the questions: 
+Open a terminal window and enter in `python TableScraperEdit.py` (if you've downloaded the whole folder, make sure you enter `cd table-scraper` first). Now it's going to ask you a bunch of questions -- they're not terribly difficult but it's important to remember to PUT ALL OF YOUR ANSWERS IN QUOTATION MARKS. Otherwise, the program will get confused and cry little error tears all over you and you'll have to run the script again. You should also know that the script can currently only scrape a table that's up to six columns -- it's a limitation that I'm working on. Now, let's go through the questions: 
 
 Paste the url you want to use: Pretty easy. Just copy the url from the website you're scraping from, paste it in the terminal, put quotes around it and press enter. For example, I used search results from the Grammys winners website for my project, so I did "http://www.grammy.com/nominees/search?artist=&field_nominee_work_value=&year=All&genre=31". 
 
