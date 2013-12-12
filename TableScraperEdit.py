@@ -24,7 +24,7 @@ cell5 = ""
 cell6 = ""
 
 #Defines what we're looking for (a table) and what the table we're looking for
-#is tagged as - either a css class or id that's defined by the user
+#is tagged as - either a css class or id that's defined by the user and its tag
 table = soup.find("table", {css : tag})
 
 #Opens the file that the data will go into and gives it a filename defined 
@@ -38,7 +38,7 @@ for row in table.findAll("tr"):
 #Defines the number of cells we're looking for, finds the text in each of 
 #those cells, and makes the empty variables from earlier equal to the text.
 #Right now, the scraper can scrape tables with up to six columns.Then it writes
-#to the file in the csv format, with each cell surrounded by semicolons
+#to a csv or xml file, depending on what the user named the file
     if len(cells) == 2:
         cell1 = cells[0].find(text=True)
         cell2 = cells[1].find(text=True)
